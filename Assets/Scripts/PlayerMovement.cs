@@ -7,12 +7,8 @@ public class PlayerMovement : MonoBehaviour
     private float horizontalInput;
     private float verticalInput;
 
-    private float jumpingPower = 16f;
-
+    // Player component references.
     private Rigidbody2D rb2d;
-    [SerializeField] private Transform groundCheck;
-    [SerializeField] private LayerMask groundLayer;
-
     private Animator animator;
 
     private void Start()
@@ -28,7 +24,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb2d.velocity = new Vector2(horizontalInput * moveSpeed, rb2d.velocity.y);
+        // Player movement in fixed update for accurate physics interactions.
+        rb2d.velocity = new Vector2(horizontalInput, verticalInput).normalized * moveSpeed;
     }
 
     private void PlayerInput()
@@ -36,22 +33,7 @@ public class PlayerMovement : MonoBehaviour
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
 
-        if (Input.GetButtonDown("Jump") && IsGrounded())
-        {
-            rb2d.velocity = new Vector2(rb2d.velocity.x, jumpingPower);
-        }
-
-        if (Input.GetButtonUp("Jump") && rb2d.velocity.y > 0f)
-        {
-            rb2d.velocity = new Vector2(rb2d.velocity.x, rb2d.velocity.y * 0.5f);
-        }
-
         AnimationCheck();
-    }
-
-    private bool IsGrounded()
-    {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     }
 
     // Changes the animation based on the direction the player is moving.
