@@ -1,0 +1,38 @@
+.header {
+    font-size: 180px;
+    color: rgb(255, 255, 255);
+    -unity-font: url("project://database/Assets/Fonts/Kenney%20Pixel.ttf?fileID=12800000&guid=7c17dd89cb36483408ca5e42ec4bfd1a&type=3#Kenney Pixel");
+    -unity-font-definition: initial;
+    align-items: center;
+    margin-top: 200px;
+    -unity-font-style: normal;
+}
+
+.button {
+    font-size: 60px;
+    align-items: stretch;
+    justify-content: flex-start;
+    width: 300px;
+    height: 90px;
+    align-self: center;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    -unity-font-definition: initial;
+    -unity-font: url("project://database/Assets/Fonts/Kenney%20Pixel.ttf?fileID=12800000&guid=7c17dd89cb36483408ca5e42ec4bfd1a&type=3#Kenney Pixel");
+    margin-top: 110px;
+    background-image: url("project://database/Assets/Sprites/UI/UI%20Adventure%20Pack/buttonLong_brown.png?fileID=21300000&guid=226fa216912ad3d4285642a1a3cdca61&type=3#buttonLong_brown");
+    transition-duration: 0.2s;
+    color: rgb(0, 0, 0);
+}
+
+.button:hover {
+    scale: 1.1 1.1;
+    -unity-background-image-tint-color: rgb(202, 129, 3);
+}
+
+.button:active {
+    background-image: url("project://database/Assets/Sprites/UI/UI%20Adventure%20Pack/buttonLong_brown_pressed.png?fileID=21300000&guid=9e73eff6cd423864992765c883ec50e1&type=3#buttonLong_brown_pressed");
+    -unity-background-image-tint-color: rgb(130, 83, 0);
+}
