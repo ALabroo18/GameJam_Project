@@ -30,8 +30,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void PlayerInput()
     {
-        horizontalInput = Input.GetAxisRaw("Horizontal");
-        verticalInput = Input.GetAxisRaw("Vertical");
+        horizontalInput = UserInput.instance.moveInput.x;
+        verticalInput = UserInput.instance.moveInput.y;
 
         AnimationCheck();
     }
